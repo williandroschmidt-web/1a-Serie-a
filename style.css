@@ -1,10 +1,14 @@
+:root {
+    --cor-tema: #38bdf8; /* Cor padrão (azul) */
+}
+
 /* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth; /* Deslizar suave ao clicar no menu */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Menu Superior Direito (As Gavetas) */
+/* Menu Superior Direito */
 header {
     position: fixed;
     top: 0;
@@ -35,13 +39,14 @@ header {
 }
 
 .logo span {
-    color: #38bdf8;
+    color: var(--cor-tema);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 25px;
+    align-items: center;
 }
 
 .nav-links a {
@@ -54,9 +59,8 @@ header {
     padding: 5px 0;
 }
 
-/* Efeito visual no hover das "gavetas" */
 .nav-links a:hover {
-    color: #38bdf8;
+    color: var(--cor-tema);
 }
 
 .nav-links a::after {
@@ -66,12 +70,90 @@ header {
     left: 0;
     width: 0;
     height: 2px;
-    background: #38bdf8;
+    background: var(--cor-tema);
     transition: 0.3s;
 }
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.btn-perfil {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-perfil:hover {
+    border-color: var(--cor-tema);
+    background: #334155;
+}
+
+/* JANELA DE CONFIGURAÇÃO (MODAL) */
+.modal {
+    display: none; /* Fica escondida por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content input, .modal-content select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: white;
+    font-size: 1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#btn-salvar {
+    background: var(--cor-tema);
+    color: #0f172a;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    flex: 2;
+    cursor: pointer;
+}
+
+#btn-fechar {
+    background: #475569;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    flex: 1;
+    cursor: pointer;
 }
 
 /* Seção Início (Hero) */
@@ -84,12 +166,11 @@ header {
     position: relative;
 }
 
-/* EFEITO ESPECIAL: Seja Bem Vindo */
 .welcome-text {
     font-size: 5rem;
     font-weight: 800;
     text-transform: uppercase;
-    background: linear-gradient(to right, #38bdf8, #818cf8, #38bdf8);
+    background: linear-gradient(to right, var(--cor-tema), #818cf8, var(--cor-tema));
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -111,12 +192,11 @@ header {
     margin-top: 10px;
 }
 
-/* Círculo decorativo flutuante atrás do texto */
 .blob {
     position: absolute;
     width: 300px;
     height: 300px;
-    background: linear-gradient(45deg, #0ea5e9, #6366f1);
+    background: linear-gradient(45deg, var(--cor-tema), #6366f1);
     filter: blur(80px);
     border-radius: 50%;
     z-index: -1;
@@ -142,11 +222,10 @@ header {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    border-left: 5px solid #38bdf8;
+    border-left: 5px solid var(--cor-tema);
     padding-left: 20px;
 }
 
-/* Cards e Tabelas */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -163,7 +242,7 @@ h2 {
 
 .card:hover {
     transform: scale(1.05);
-    border-color: #38bdf8;
+    border-color: var(--cor-tema);
 }
 
 .horario-table {
@@ -193,15 +272,8 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsividade para celular */
 @media (max-width: 768px) {
-    .nav-links {
-        gap: 10px;
-    }
-    .nav-links a {
-        font-size: 0.7rem;
-    }
-    .welcome-text {
-        font-size: 2.5rem;
-    }
+    .nav-links { gap: 10px; }
+    .nav-links a { font-size: 0.7rem; }
+    .welcome-text { font-size: 2.5rem; }
 }

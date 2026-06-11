@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -17,16 +17,39 @@
             <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#atividades">Atividades</a></li>
-                <li><a href="#avaliacoes">Avaliações e Trabalhos</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
                 <li><a href="#horarios">Horários</a></li>
                 <li><a href="#avisos">Avisos</a></li>
+                <li><button id="btn-config" class="btn-perfil">⚙️ Perfil</button></li>
             </ul>
         </nav>
     </header>
 
+    <div id="modal-config" class="modal">
+        <div class="modal-content">
+            <h3>Personalize seu Portal</h3>
+            <label for="username">Seu Nome/Usuário:</label>
+            <input type="text" id="username" placeholder="Digite seu nome...">
+            
+            <label for="theme-color">Escolha a cor do tema:</label>
+            <select id="theme-color">
+                <option value="#38bdf8">Azul Celestial</option>
+                <option value="#ec4899">Rosa Neon</option>
+                <option value="#22c55e">Verde Gamer</option>
+                <option value="#eab308">Amarelo Ouro</option>
+                <option value="#a855f7">Roxo Místico</option>
+            </select>
+            
+            <div class="modal-buttons">
+                <button id="btn-salvar">Salvar Configurações</button>
+                <button id="btn-fechar">Fechar</button>
+            </div>
+        </div>
+    </div>
+
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1 class="welcome-text">Seja Bem Vindo</h1>
+            <h1 class="welcome-text" id="welcome-title">Seja Bem Vindo</h1>
             <p>Sua plataforma completa de organização acadêmica.</p>
         </div>
         <div class="blob"></div>
@@ -58,13 +81,15 @@
     <section id="avisos" class="content-section alt-bg">
         <h2>Avisos</h2>
         <div class="aviso-box">
-            <strong>⚠️ Atenção:</strong> Reunião de pais na próxima sexta-feira às 19h.
+            <strong>Aviso:</strong> KAKkkakkka
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Portal Acadêmico - Design Moderno</p>
+        <p>&copy; 2026 Portal Acadêmico - Design Moderno</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
+         
